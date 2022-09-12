@@ -1,0 +1,9 @@
+https://www.itzgeek.com/how-tos/linux/ubuntu-how-tos/install-phpmyadmin-with-nginx-on-ubuntu-22-04.html
+https://linuxhint.com/install-and-use-php-composer-ubuntu-22-04/
+https://www.digitalocean.com/community/tutorials/how-to-install-php-7-4-and-set-up-a-local-development-environment-on-ubuntu-20-04
+
+sudo ln -s /etc/nginx/sites-available/.conf
+
+npm install -g npm@4.6.1
+
+sudo update-alternatives --set php /usr/bin/php5.6

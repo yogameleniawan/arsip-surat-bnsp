@@ -98,7 +98,7 @@ let optionsAmerica = {
 }
 let optionsIndonesia = {
 	...optionsEurope,
-	colors: ['#12263a'],
+	colors: ['#2d2766'],
 }
 
 
