@@ -110,6 +110,7 @@
 </script>
 <script>
 
+    let viewData;
     function formatDate(date){
         let tanggal = moment(date, 'YYYY-MM-DD HH:mm:ss').format('YYYY-MM-DD HH:mm:ss');
         return tanggal;
@@ -178,6 +179,7 @@
     }
 
     const viewComponent = (data) => {
+        viewData = data;
         return (
             `
             <form id="form-data" enctype="multipart/form-data">
@@ -189,19 +191,28 @@
                             <p>Waktu Unggah: ${formatDate(data.created_at)}</p>
                         </div>
                     </div>
-                    <a id="btn-cancel"class="btn btn-light-secondary" onclick="tablePage()">
-                        <i class="bx bx-x d-block d-sm-none"></i>
-                        <span class="d-none d-sm-block">Kembali</span>
-                    </a>
-                    <div id="btn-loader" class="loader d-none"></div>
-                    <a id="btn-action" href="${data.file}" class="btn btn-primary ml-1">
-                        <i class="bx bx-check d-block d-sm-none"></i>
-                        <span class="d-none d-sm-block" >Unduh</span>
-                    </a>
-                    <a id="btn-action" onclick="editPage('${data}')" class="btn btn-success ml-1">
-                        <i class="bx bx-check d-block d-sm-none"></i>
-                        <span class="d-none d-sm-block">Edit/Ganti File</span>
-                    </a>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <embed src="${data.file}" width="100%" style="height:100vw">
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md-12">
+                            <a id="btn-cancel"class="btn btn-light-secondary" onclick="tablePage()">
+                                <i class="bx bx-x d-block d-sm-none"></i>
+                                <span class="d-none d-sm-block">Kembali</span>
+                            </a>
+                            <div id="btn-loader" class="loader d-none"></div>
+                            <a id="btn-action" href="${data.file}" class="btn btn-primary ml-1">
+                                <i class="bx bx-check d-block d-sm-none"></i>
+                                <span class="d-none d-sm-block" >Unduh</span>
+                            </a>
+                            <a id="btn-action" onclick="editPage()" class="btn btn-success ml-1">
+                                <i class="bx bx-check d-block d-sm-none"></i>
+                                <span class="d-none d-sm-block">Edit/Ganti File</span>
+                            </a>
+                        </div>
+                    </div>
                 </form>
             `
         )
@@ -297,9 +308,9 @@
         $('.card-body').html(html)
     }
 
-    function editPage(data)
+    function editPage()
     {
-        let html = editComponent(data);
+        let html = editComponent(viewData);
         $('.card-body').html(html)
     }
 
