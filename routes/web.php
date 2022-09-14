@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/profile', function() {
+    return view('admin.profile.index');
+})->name('profile');
+
 Route::resources([
     'arsip' => ArsipController::class,
 ]);

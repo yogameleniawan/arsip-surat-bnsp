@@ -60,6 +60,12 @@
                                 <span>Arsip</span>
                             </a>
                         </li>
+                        <li class="sidebar-item {{ Route::is('profile') ? 'active' : '' }}">
+                            <a href="{{ route('profile') }}" class='sidebar-link'>
+                                <i class="bi bi-person-fill"></i>
+                                <span>Profile</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
