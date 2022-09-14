@@ -10,7 +10,7 @@
             <div class="col-md-2">
                 <img src="{{ url('assets/images/foto.jpg') }}" alt="" style="width: 10vw">
             </div>
-            <div class="col-md-3">
+            <div class="col-md-6">
                 <p>Aplikasi ini dibuat oleh:</p>
                 <p>Nama : Yoga Meleniawan Pamungkas</p>
                 <p>NIM : 1931710083</p>

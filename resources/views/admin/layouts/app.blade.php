@@ -93,13 +93,13 @@
                                     <div class="user-menu d-flex">
                                         <div class="user-name text-end me-3">
                                             <h6 class="mb-0 text-gray-600">
-                                                {{-- {{ Auth::user()->email != null ? Auth::user()->email : 'Email' }} --}}
+                                                {{ Auth::user()->email != null ? Auth::user()->email : 'Email' }}
                                             </h6>
                                         </div>
                                         <div class="user-img d-flex align-items-center">
                                             <div class="avatar avatar-md">
-                                                {{-- <img
-                                                    src="{{ Auth::user() != null && Auth::user()->profile_photo_path != null? url(Auth::user()->profile_photo_path): url('mazer/assets/images/faces/1.jpg') }}"> --}}
+                                                <img
+                                                    src="{{ Auth::user() != null && Auth::user()->profile_photo_path != null? url(Auth::user()->profile_photo_path): url('mazer/assets/images/faces/1.jpg') }}">
                                             </div>
                                         </div>
                                     </div>
@@ -112,11 +112,6 @@
                                     </li>
                                     <hr class="dropdown-divider">
                                     {{-- </li> --}}
-                                    {{-- <li><a class="dropdown-item" href="{{ route('profile') }}"><i
-                                        class="icon-mid bi bi-person me-2"></i>
-                                            Profile</a></li>
-                                    <hr class="dropdown-divider">
-                                    </li>
                                     <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();" role="button">
                                             <i class="icon-mid bi bi-box-arrow-left me-2"></i>
@@ -127,7 +122,7 @@
                                             style="display: none;">
                                             @csrf
                                         </form>
-                                    </li> --}}
+                                    </li>
                                 </ul>
                             </div>
                         </div>

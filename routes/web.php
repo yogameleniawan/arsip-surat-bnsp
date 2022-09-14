@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArsipController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,14 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('arsip.index');
 });
 
-Route::get('/profile', function() {
-    return view('admin.profile.index');
-})->name('profile');
+Route::middleware(['auth'])->group(function () {
 
-Route::resources([
-    'arsip' => ArsipController::class,
-]);
+    Route::get('/profile', function() {
+        return view('admin.profile.index');
+    })->name('profile');
+
+    Route::resources([
+        'arsip' => ArsipController::class,
+    ]);
+});

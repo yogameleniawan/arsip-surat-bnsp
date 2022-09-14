@@ -19,7 +19,7 @@
         <div class="col-lg-5 col-12">
             <div id="auth-left">
                 <div class="auth-logo">
-                    <a href="index.html"><img src="{{ url('assets/images//pages/Oon92liTCVWOj7IUe5LFjSUiiD2UpDaHAma8bPUa.png') }}" alt="Logo"></a>
+                    <a href="index.html"><img src="{{ url('assets/images/logo.png') }}" alt="Logo"></a>
                 </div>
                 <h5 >Log in.</h5>
                 <form action="{{route('login')}}" method="POST">
